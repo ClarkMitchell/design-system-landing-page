@@ -1,38 +1,14 @@
 import React from 'react';
-
 import Button from './Button';
 
 const story = {
   title: 'Atoms/Button',
   component: Button,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
 };
 
-const Template = (args) => <Button {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
-  label: 'Button',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
-};
+export const Primary = () => <Button label="Button" primary></Button>;
+export const Secondary = () => <Button label="Button"></Button>;
+export const Large = () => <Button label="Button" size="large"></Button>;
+export const Small = () => <Button label="Button" size="small"></Button>;
 
 export default story;
