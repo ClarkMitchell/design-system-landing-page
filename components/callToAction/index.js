@@ -1,3 +1,1 @@
-import CallToAction from "./callToAction";
-
-export default CallToAction;
+export { default } from "./callToAction";

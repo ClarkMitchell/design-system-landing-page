@@ -1,5 +1,5 @@
-import Nav from "./nav";
-import MobileNav from "./mobileNav";
+import Nav from "./Nav";
+import MobileNav from "./MobileNav";
 
 export default function Header() {
   return (

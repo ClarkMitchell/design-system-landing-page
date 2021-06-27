@@ -397,3 +397,7 @@ section.hero + section {
     padding: 0.4rem;
   }
 }
+
+.test-button {
+  background-color: red;
+}
