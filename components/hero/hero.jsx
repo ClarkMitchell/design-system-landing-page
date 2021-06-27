@@ -1,7 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import gql from "graphql-tag";
-import Image from "next/image";
-import "./hero.scoped.css";
 
 export default function Hero({ headline, subheadline, image }) {
   return (
