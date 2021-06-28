@@ -1,18 +1,33 @@
-import Nav from "./Nav";
-import MobileNav from "./MobileNav";
+import { gql } from "@apollo/client";
+import Nav from "../Nav";
+import MobileNav from "../Nav/MobileNav";
 
-export default function Header() {
+export default function Header({ logo, nav }) {
   return (
     <header>
-      <div className="header__container">
-        <a className="logo" href="#">
-          <img src="/images/logo.svg" alt="Insure Logo" />
-        </a>
-        <Nav />
-        <MobileNav>
-          <Nav />
-        </MobileNav>
-      </div>
+      <a className="logo" href="#">
+        <img src={logo.asset.url} alt={logo.asset.altText} />
+      </a>
+      <Nav nav={nav} />
+      <MobileNav>
+        <Nav nav={nav} />
+      </MobileNav>
     </header>
   );
 }
+
+Header.query = gql`
+  query Header {
+    allNavigation(where: { name: { eq: "Header" } }) {
+      ... on Navigation {
+        logo {
+          asset {
+            url
+            altText
+          }
+        }
+        nav
+      }
+    }
+  }
+`;

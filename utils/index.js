@@ -1,10 +1,12 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { gql } from "@apollo/client";
 
-import Hero from "../components/hero";
-import Services from "../components/services";
-import TextWithIllustration from "../components/textWithIllustration";
-import CallToAction from "../components/callToAction";
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Hero from "../components/Hero";
+import Services from "../components/Services";
+import TextWithIllustration from "../components/TextWithIllustration";
+import CallToAction from "../components/CallToAction";
 
 export const client = new ApolloClient({
   uri: process.env.REACT_APP_API_URL,
@@ -28,6 +30,22 @@ export function getBlocks() {
     TextWithIllustration,
     CallToAction,
   };
+}
+
+export async function getHeader() {
+  const query = Header.query;
+  const { data } = await client.query({ query });
+  const [header] = data.allNavigation;
+
+  return header;
+}
+
+export async function getFooter() {
+  const query = Footer.query;
+  const { data } = await client.query({ query });
+  const [footer] = data.allNavigation;
+
+  return footer;
 }
 
 export async function getPropsForSlug(slug) {
@@ -60,6 +78,8 @@ export async function getPropsForSlug(slug) {
   });
 
   const [props] = data.allPage;
+  props.header = await getHeader();
+  props.footer = await getFooter();
 
   return props;
 }

@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import Service from "../service";
+import Service from "../Service";
 
 export default function Services({ heading, services }) {
   return (

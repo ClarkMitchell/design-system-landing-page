@@ -1,10 +1,10 @@
 import { getBlocks, getPropsForSlug } from "../utils";
 
-export default function Home({ data, preview }) {
+export default function Home({ pageBuilder }) {
   const blocks = getBlocks();
   return (
     <main>
-      {data.pageBuilder.map((block) => {
+      {pageBuilder.map((block) => {
         const Block = blocks[block.__typename];
         return <Block {...block} key={block._key} />;
       })}
@@ -12,13 +12,12 @@ export default function Home({ data, preview }) {
   );
 }
 
-export async function getStaticProps({ preview = false }) {
+export async function getStaticProps() {
   const pageProps = await getPropsForSlug("/");
 
   return {
     props: {
-      preview,
-      data: pageProps,
+      data: pageProps
     },
   };
 }
