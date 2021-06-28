@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { getPageBlockMap, getPaths, getPropsForSlug } from "../utils";
 import BlockBuilder from "../components/BlockBuilder";
 
@@ -28,3 +29,7 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+
+Page.propTypes = {
+  pageBlocks: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

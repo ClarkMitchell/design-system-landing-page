@@ -6,7 +6,7 @@ export default function Header({ logo, nav }) {
   return (
     <header>
       <a className="logo" href="#">
-        <img src={logo.asset.url} alt={logo.asset.altText} />
+        <img src={logo?.asset?.url} alt={logo?.asset?.altText} />
       </a>
       <Nav nav={nav} />
       <MobileNav>

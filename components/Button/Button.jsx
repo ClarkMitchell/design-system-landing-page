@@ -11,15 +11,11 @@ export default function Button({
     ? "storybook-button--primary"
     : "storybook-button--secondary";
   return (
-    <button
-      type="button"
-      className="test-button"
-      {...props}
-    >
+    <button type="button" className="test-button" {...props}>
       {label}
     </button>
   );
-};
+}
 
 Button.propTypes = {
   primary: PropTypes.bool,

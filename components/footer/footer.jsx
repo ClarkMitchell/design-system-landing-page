@@ -5,7 +5,7 @@ export default function Footer({ logo, nav }) {
   return (
     <footer>
       <a className="logo" href="#">
-        <img src={logo.asset.url} alt={logo.asset.altText} />
+        <img src={logo?.asset?.url} alt={logo?.asset?.altText} />
       </a>
       <Nav nav={nav} />
     </footer>

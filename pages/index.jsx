@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { getPageBlockMap, getPropsForSlug } from "../utils";
 import BlockBuilder from "../components/BlockBuilder";
 
@@ -11,7 +12,7 @@ export default function Home({ pageBlocks }) {
 }
 
 export async function getStaticProps() {
-  const pageProps = await getPropsForSlug("/");
+  const pageProps = await getPropsForSlug("home");
 
   return {
     props: {
@@ -19,3 +20,7 @@ export async function getStaticProps() {
     },
   };
 }
+
+Home.propTypes = {
+  pageBlocks: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

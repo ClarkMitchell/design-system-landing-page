@@ -77,13 +77,13 @@ export async function getPropsForSlug(slug) {
     variables: { slug },
   });
 
-  console.log(data);
+  const [component] = data.allPage;
 
-  const [props] = data.allPage;
-  props.header = await getHeader();
-  props.footer = await getFooter();
-
-  return props;
+  return {
+    component,
+    header: await getHeader(),
+    footer: await getFooter()
+  }
 }
 
 export async function getPaths() {
@@ -101,11 +101,9 @@ export async function getPaths() {
 
   const { data } = await client.query({ query: GET_PATHS });
 
-  const paths = data.allPage.map(({ slug }) => {
+  return data.allPage.map(({ slug }) => {
     return {
       params: { slug: slug.current },
     };
   });
-
-  return paths;
 }
