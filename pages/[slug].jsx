@@ -1,13 +1,11 @@
-import { getBlocks, getPaths, getPropsForSlug } from "../utils";
+import { getPageBlockMap, getPaths, getPropsForSlug } from "../utils";
+import BlockBuilder from "../components/BlockBuilder";
 
-export default function Page({ pageBuilder }) {
-  const blocks = getBlocks();
+export default function Page({ pageBlocks }) {
+  const blockMap = getPageBlockMap();
   return (
     <main>
-      {pageBuilder.map((block) => {
-        const Block = blocks[block.__typename];
-        return <Block {...block} key={block._key} />;
-      })}
+      <BlockBuilder blockMap={blockMap} blocks={pageBlocks} />
     </main>
   );
 }

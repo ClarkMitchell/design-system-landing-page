@@ -1,13 +1,11 @@
-import { getBlocks, getPropsForSlug } from "../utils";
+import { getPageBlockMap, getPropsForSlug } from "../utils";
+import BlockBuilder from "../components/BlockBuilder";
 
-export default function Home({ pageBuilder }) {
-  const blocks = getBlocks();
+export default function Home({ pageBlocks }) {
+  const blockMap = getPageBlockMap();
   return (
     <main>
-      {pageBuilder.map((block) => {
-        const Block = blocks[block.__typename];
-        return <Block {...block} key={block._key} />;
-      })}
+      <BlockBuilder blockMap={blockMap} blocks={pageBlocks} />
     </main>
   );
 }
@@ -17,7 +15,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      data: pageProps
+      data: pageProps,
     },
   };
 }

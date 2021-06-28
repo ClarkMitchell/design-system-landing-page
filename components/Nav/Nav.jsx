@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function Nav({ nav }) {
   return (
     <nav>
@@ -13,3 +15,7 @@ export default function Nav({ nav }) {
     </nav>
   );
 }
+
+Nav.propTypes = {
+  nav: PropTypes.arrayOf(PropTypes.string).isRequired
+};

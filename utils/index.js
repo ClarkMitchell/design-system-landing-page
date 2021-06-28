@@ -23,7 +23,7 @@ export const client = new ApolloClient({
   },
 });
 
-export function getBlocks() {
+export function getPageBlockMap() {
   return {
     Hero,
     Services,
@@ -57,7 +57,7 @@ export async function getPropsForSlug(slug) {
         slug {
           current
         }
-        pageBuilder {
+        pageBlocks {
           __typename
           ...Hero
           ...Services
@@ -76,6 +76,8 @@ export async function getPropsForSlug(slug) {
     query: GET_DATA,
     variables: { slug },
   });
+
+  console.log(data);
 
   const [props] = data.allPage;
   props.header = await getHeader();
