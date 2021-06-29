@@ -48,6 +48,13 @@ export async function getFooter() {
   return footer;
 }
 
+export async function getNavigation() {
+  return {
+    header: await getHeader(),
+    footer: await getFooter()
+  };
+}
+
 export async function getPropsForSlug(slug) {
   const GET_DATA = gql`
     query getPageBySlug($slug: String!) {
@@ -81,8 +88,7 @@ export async function getPropsForSlug(slug) {
 
   return {
     component,
-    header: await getHeader(),
-    footer: await getFooter()
+    ... (await getNavigation())
   }
 }
 

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { getHeader, getFooter } from "../utils";
+import { getNavigation } from "../utils";
 
 export default function Custom500({ message }) {
   return <h1>{message}</h1>;
@@ -9,9 +9,8 @@ export async function getStaticProps() {
   return {
     props: {
       data: {
-        header: await getHeader(),
+        ...(await getNavigation()),
         component: { message: "404 | Page Not Found" },
-        footer: await getFooter(),
       },
     },
   };
