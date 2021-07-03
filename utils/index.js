@@ -1,12 +1,12 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { gql } from "@apollo/client";
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Hero from "../components/Hero";
-import Services from "../components/Services";
-import TextWithIllustration from "../components/TextWithIllustration";
-import CallToAction from "../components/CallToAction";
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import Hero from "components/Hero";
+import Services from "components/Services";
+import TextWithIllustration from "components/TextWithIllustration";
+import CallToAction from "components/CallToAction";
 
 export const client = new ApolloClient({
   uri: process.env.REACT_APP_API_URL,

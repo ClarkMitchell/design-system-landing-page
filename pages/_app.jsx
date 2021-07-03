@@ -1,8 +1,7 @@
 import PropTypes from "prop-types";
-import Header from "../components/Header";
-import Footer from '../components/Footer';
-import "../styles/reset.css";
-import "../styles/global.css";
+import Header from "components/Header";
+import Footer from 'components/Footer';
+import "styles/main.css";
 
 export default function App({ Component, pageProps: { data } }) {
   return (

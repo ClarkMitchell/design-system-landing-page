@@ -38,7 +38,7 @@ body {
   /* For performance */
   text-rendering: optimizeSpeed;
   /* Improves scan-ability of text lines */
-  line-height: 1.5;
+  line-height: var(--ratio, 1.5);
 }
 
 /* Better text underline */

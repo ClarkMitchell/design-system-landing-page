@@ -1,0 +1,25 @@
+.cover {
+  --padding: var(--s1, 1rem);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: var(--padding);
+}
+
+.cover > * {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cover > :first-child:not(h1) {
+  margin-top: 0;
+}
+
+.cover > :last-child:not(h1) {
+  margin-bottom: 0;
+}
+
+.cover > h1 {
+  margin-top: auto;
+  margin-bottom: auto;
+}
