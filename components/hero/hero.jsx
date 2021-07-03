@@ -3,22 +3,16 @@ import gql from "graphql-tag";
 
 export default function Hero({ headline, subheadline, image }) {
   return (
-    <section className="hero full-bleed">
-      <div className="hero__container">
+    <section>
+      <div>
         <img
-          className="hero__image"
           src={image.asset.url}
-          alt={image.asset.altText}
+          alt={image.altText}
         ></img>
-        <div className="hero__text">
+        <div>
           <hr />
           <h1>{headline}</h1>
-          <p>{subheadline}</p>
-          <div>
-            <a className="plans" href="#">
-              View Plans
-            </a>
-          </div>
+          {subheadline && <p>{subheadline}</p>}
         </div>
       </div>
     </section>
@@ -31,9 +25,9 @@ Hero.fragment = gql`
     headline
     subheadline
     image {
+      altText
       asset {
         url
-        altText
       }
     }
   }

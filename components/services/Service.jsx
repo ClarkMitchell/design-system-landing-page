@@ -19,9 +19,9 @@ Service.fragment = gql`
     heading
     subheading
     icon {
+      altText
       asset {
         url
-        altText
       }
     }
   }

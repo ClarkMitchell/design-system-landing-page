@@ -1,4 +1,5 @@
 import { gql } from "@apollo/client";
+import Image from 'next/image';
 
 export default function TextWithIllustration({
   heading,
@@ -7,14 +8,13 @@ export default function TextWithIllustration({
   image,
 }) {
   return (
-    <section className="illustration">
-      <div className="illustration__text">
+    <section>
+      <div>
         <h2>{heading}</h2>
         <p>{subheading}</p>
         <p>{excerpt}</p>
       </div>
-      <img
-        className="illustration__image"
+      <Image
         src={image.asset.url}
         alt={image.asset.altText}
       />
@@ -29,9 +29,9 @@ TextWithIllustration.fragment = gql`
     subheading
     excerpt
     image {
+      altText
       asset {
         url
-        altText
       }
     }
   }

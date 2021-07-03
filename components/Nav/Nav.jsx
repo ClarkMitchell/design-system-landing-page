@@ -5,9 +5,9 @@ export default function Nav({ nav }) {
     <nav>
       <ul>
         {nav.map((link) => (
-          <li key={link}>
-            <a className="nav-link" href={`/${link}`}>
-              {link}
+          <li key={link.text}>
+            <a href={`/${link.url}`}>
+              {link.text}
             </a>
           </li>
         ))}
@@ -17,5 +17,8 @@ export default function Nav({ nav }) {
 }
 
 Nav.propTypes = {
-  nav: PropTypes.arrayOf(PropTypes.string).isRequired
+  nav: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string,
+    url: PropTypes.string,
+  })).isRequired
 };

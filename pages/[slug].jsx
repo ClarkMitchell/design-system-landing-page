@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { getPageBlockMap, getPaths, getPropsForSlug } from "../utils";
+import { getPageBlockMap, getPaths, getPropsForSlug } from "utils";
 import BlockBuilder from "components/BlockBuilder";
 
 export default function Page({ pageBlocks }) {

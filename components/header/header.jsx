@@ -1,4 +1,5 @@
 import { gql } from "@apollo/client";
+import Image from "next/image";
 import Nav from "../Nav";
 import MobileNav from "../Nav/MobileNav";
 
@@ -6,7 +7,7 @@ export default function Header({ logo, nav }) {
   return (
     <header>
       <a className="logo" href="#">
-        <img src={logo?.asset?.url} alt={logo?.asset?.altText} />
+        <Image src={logo.asset.url} alt={logo.altText} layout="fill" />
       </a>
       <Nav nav={nav} />
       <MobileNav>
@@ -21,12 +22,15 @@ Header.query = gql`
     allNavigation(where: { name: { eq: "Header" } }) {
       ... on Navigation {
         logo {
+          altText
           asset {
             url
-            altText
           }
         }
-        nav
+        nav {
+          text
+          url
+        }
       }
     }
   }

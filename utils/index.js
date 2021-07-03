@@ -7,6 +7,10 @@ import Hero from "components/Hero";
 import Services from "components/Services";
 import TextWithIllustration from "components/TextWithIllustration";
 import CallToAction from "components/CallToAction";
+import Grid from 'components/Grid';
+import Testimonials from "components/Testimonials";
+import Gallery from "components/Gallery";
+import { ImageCard, TextCard, ImageTextCard } from "components/Cards";
 
 export const client = new ApolloClient({
   uri: process.env.REACT_APP_API_URL,
@@ -29,7 +33,18 @@ export function getPageBlockMap() {
     Services,
     TextWithIllustration,
     CallToAction,
+    Grid,
+    Testimonials,
+    Gallery,
   };
+}
+
+export function getCardMap() {
+  return {
+    ImageCard,
+    TextCard,
+    ImageTextCard,
+  }
 }
 
 export async function getHeader() {
@@ -70,6 +85,9 @@ export async function getPropsForSlug(slug) {
           ...Services
           ...TextWithIllustration
           ...CallToAction
+          ...Grid
+          ...Testimonials
+          ...Gallery
         }
       }
     }
@@ -77,6 +95,9 @@ export async function getPropsForSlug(slug) {
     ${Services.fragment}
     ${TextWithIllustration.fragment}
     ${CallToAction.fragment}
+    ${Grid.fragment}
+    ${Testimonials.fragment}
+    ${Gallery.fragment}
   `;
 
   const { data } = await client.query({

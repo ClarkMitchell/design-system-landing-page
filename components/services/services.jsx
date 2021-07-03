@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import Service from "../Service";
+import Service from "./Service";
 
 export default function Services({ heading, services }) {
   return (
@@ -20,7 +20,6 @@ Services.fragment = gql`
     _key
     heading
     services {
-      _key
       ...Service
     }
   }
