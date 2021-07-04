@@ -1,4 +1,5 @@
 import { gql } from "@apollo/client";
+import MobileNav from "components/MobileNav";
 import Image from "next/image";
 import React from "react";
 import Nav from "../Nav";
@@ -15,6 +16,9 @@ export default function Header({ logo, nav }) {
         />
       </a>
       <Nav nav={nav} />
+      <MobileNav>
+        <Nav nav={nav} />
+      </MobileNav>
     </header>
   );
 }

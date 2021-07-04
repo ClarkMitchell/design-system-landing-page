@@ -1,3 +1,4 @@
 @import 'components/Header/Header.css';
 @import 'components/Nav/Nav.css';
-@import 'components/Hero/Hero.css'
+@import 'components/MobileNav/MobileNav.css';
+@import 'components/Hero/Hero.css';

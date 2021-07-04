@@ -2,6 +2,6 @@ header.cluster {
   --justify: space-between;
   padding: var(--s1);
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   background-color: var(--sky);
 }
