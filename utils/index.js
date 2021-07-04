@@ -1,13 +1,13 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 import { gql } from "@apollo/client";
 
-import Header from 'components/Header';
-import Footer from 'components/Footer';
+import Header from "components/Header";
+import Footer from "components/Footer";
 import Hero from "components/Hero";
 import Services from "components/Services";
 import TextWithIllustration from "components/TextWithIllustration";
 import CallToAction from "components/CallToAction";
-import Grid from 'components/Grid';
+import Grid from "components/Grid";
 import Testimonials from "components/Testimonials";
 import Gallery from "components/Gallery";
 import { ImageCard, TextCard, ImageTextCard } from "components/Cards";
@@ -44,7 +44,7 @@ export function getCardMap() {
     ImageCard,
     TextCard,
     ImageTextCard,
-  }
+  };
 }
 
 export async function getHeader() {
@@ -66,7 +66,7 @@ export async function getFooter() {
 export async function getNavigation() {
   return {
     header: await getHeader(),
-    footer: await getFooter()
+    footer: await getFooter(),
   };
 }
 
@@ -109,8 +109,8 @@ export async function getPropsForSlug(slug) {
 
   return {
     component,
-    ... (await getNavigation())
-  }
+    ...(await getNavigation()),
+  };
 }
 
 export async function getPaths() {
@@ -133,4 +133,13 @@ export async function getPaths() {
       params: { slug: slug.current },
     };
   });
+}
+
+export function popBlockByTypename(typename, blocks) {
+  const [block] = blocks.splice(
+    blocks.findIndex((block) => block.__typename === typename),
+    1
+  );
+
+  return block;
 }

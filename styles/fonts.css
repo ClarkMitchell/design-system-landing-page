@@ -1,15 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap');
 
+:root {
+  --font-display:'Fraunces', serif;
+  --font-normal: 'Barlow', sans-serif;
+}
+
 * {
-  font-family: 'Barlow', sans-serif;
+  font-family: var(--font-normal);
 }
 
 h1, h2, h3 {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-display);
 }
 
 h1 {
-  font-size: var(--s3);
+  font-size: clamp(var(--s2), 4vw, var(--s3));
 }
 
 h2 {

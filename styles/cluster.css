@@ -1,8 +1,13 @@
-.cluster {
+:root {
   --justify: flex-start;
+  --gap: var(--s1, 1rem);
+}
+
+.cluster {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--s0, 1rem);
+  column-gap: var(--column-gap, --gap);
+  row-gap: var(--row-gap, --gap);
   justify-content: var(--justify);
   align-items: center;
 }

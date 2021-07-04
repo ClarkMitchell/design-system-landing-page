@@ -1,0 +1,31 @@
+nav.cluster {
+  --column-gap: var(--s3);
+  --row-gap: var(--s1);
+}
+
+nav > a {
+  text-decoration: none;
+}
+
+nav > a:not(:last-child) {
+  color: var(--white);
+  border-bottom: 2px solid transparent;
+}
+
+nav > a:not(:last-child):hover {
+  border-bottom: 2px solid var(--white);
+}
+
+nav > a:last-child {
+  background-color: var(--white);
+  padding: var(--s0) var(--s1);
+  border-radius: 100px;
+  color: var(--dark-blue);
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 0.80rem;
+}
+
+nav > a:last-child:hover {
+  background-color: var(--light-sky);
+}

@@ -6,7 +6,13 @@ export default function Footer({ logo, nav }) {
   return (
     <footer>
       <a className="logo" href="#">
-        <Image src={logo.asset.url} alt={logo.altText} layout="fill" />
+        <Image
+          src={logo.asset.url}
+          alt={logo.altText}
+          layout="responsive"
+          height="30"
+          width="170"
+        />
       </a>
       <Nav nav={nav} />
     </footer>

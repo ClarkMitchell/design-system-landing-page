@@ -1,0 +1,12 @@
+h1 {
+  z-index: 1;
+  color: var(--white);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+
+.cover > h1 {
+  margin-top: var(--s3);
+  margin-bottom: var(--s4);
+}

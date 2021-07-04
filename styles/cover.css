@@ -18,8 +18,3 @@
 .cover > :last-child:not(h1) {
   margin-bottom: 0;
 }
-
-.cover > h1 {
-  margin-top: auto;
-  margin-bottom: auto;
-}

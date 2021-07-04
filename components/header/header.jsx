@@ -1,18 +1,20 @@
 import { gql } from "@apollo/client";
 import Image from "next/image";
+import React from "react";
 import Nav from "../Nav";
-import MobileNav from "../Nav/MobileNav";
 
 export default function Header({ logo, nav }) {
   return (
-    <header>
+    <header className="cluster">
       <a className="logo" href="#">
-        <Image src={logo.asset.url} alt={logo.altText} layout="fill" />
+        <Image
+          src={logo.asset.url}
+          alt={logo.altText}
+          height="30"
+          width="170"
+        />
       </a>
       <Nav nav={nav} />
-      <MobileNav>
-        <Nav nav={nav} />
-      </MobileNav>
     </header>
   );
 }

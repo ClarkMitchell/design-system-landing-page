@@ -4,6 +4,7 @@ import BlockBuilder from "components/BlockBuilder";
 
 export default function Home({ pageBlocks }) {
   const blockMap = getPageBlockMap();
+
   return (
     <main>
       <BlockBuilder blockMap={blockMap} blocks={pageBlocks} />
