@@ -1,5 +1,6 @@
-.mobile-nav, .mobile-menu-button {
-  display: none
+.mobile-nav,
+.mobile-menu-button {
+  display: none;
 }
 
 .mobile-menu-button {
@@ -37,11 +38,19 @@
     background-color: var(--white);
   }
 
-  .mobile-nav.open > nav {
-      padding: var(--s1);
+  .mobile-nav > nav {
+    padding: var(--s1);
   }
 
-  .mobile-nav.open > nav > * {
+  .mobile-nav.open nav a {
     color: var(--dark-gray);
+  }
+
+  .mobile-nav.open nav a:last-of-type {
+    background-color: var(--yellow);
+  }
+
+  .mobile-nav.open nav a:last-of-type:hover {
+    background-color: var(--light-sky);
   }
 }

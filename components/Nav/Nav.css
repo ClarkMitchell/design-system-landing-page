@@ -7,7 +7,7 @@ nav > a {
   text-decoration: none;
 }
 
-.inverted nav > a:not(:last-child) {
+.inverted nav a:not(:last-child) {
   color: var(--white);
 }
 

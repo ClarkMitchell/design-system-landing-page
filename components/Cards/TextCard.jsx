@@ -7,9 +7,11 @@ export default function TextCard({ heading, content, link }) {
       <div className="stack">
         <h2>{heading}</h2>
         <p>{content}</p>
-        <Link href={link.url}>
-          <a>{link.text}</a>
-        </Link>
+        <div>
+          <Link href={link.url}>
+            <a>{link.text}</a>
+          </Link>
+        </div>
       </div>
     </article>
   );

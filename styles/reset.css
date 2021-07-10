@@ -35,8 +35,8 @@ body {
 }
 
 body {
-  /* For performance */
-  text-rendering: optimizeSpeed;
+  /* For aesthetics */
+  text-rendering: geometricPrecision;
   /* Improves scan-ability of text lines */
   line-height: var(--ratio, 1.5);
 }

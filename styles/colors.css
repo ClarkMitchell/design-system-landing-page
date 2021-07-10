@@ -6,9 +6,9 @@
   --dark-blue: hsl(212, 27%, 19%);
   --blue: hsl(198, 62%, 26%);
   --dark-gray: hsl(213, 9%, 39%);
-  --gray: hsl(232, 10%, 55%);
+  --gray: hsl(232, 10%, 45%);
   --light-gray: hsl(210, 4%, 67%);
   --white: hsl(0, 0%, 100%);
-  --sky: 	hsl(200, 100%, 62%);
-  --light-sky: 	hsl(200, 100%, 82%);
+  --sky: hsl(200, 100%, 62%);
+  --light-sky: hsl(200, 100%, 82%);
 }

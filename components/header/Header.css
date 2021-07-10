@@ -7,7 +7,7 @@ header.cluster {
 }
 
 header.inverted {
-  background-color: var(--sky);
+  background-color: transparent;
 }
 
 header * {

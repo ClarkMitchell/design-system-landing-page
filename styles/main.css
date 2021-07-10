@@ -19,8 +19,23 @@
 @import "imposter.css";
 @import "components.css";
 
+h1 {
+  font-weight: 900;
+}
+
+h2 {
+  color: var(--dark-blue);
+  letter-spacing: -0.29px;
+  font-weight: 900;
+}
+
 p {
-  color: var(--dark-gray);
+  color: var(--gray);
+}
+
+p,
+a {
+  letter-spacing: -0.13px;
 }
 
 @media screen and (max-width: 800px) {
@@ -30,5 +45,15 @@ p {
 
   .Egg {
     grid-row: 1;
+  }
+
+  .Cup {
+    grid-row: 3;
+  }
+
+  .text-card {
+    padding-top: var(--s3);
+    padding-bottom: var(--s3);
+    text-align: center;
   }
 }
