@@ -6,17 +6,17 @@ import Footer from "components/Footer";
 import "styles/main.css";
 
 export default function App({ Component, pageProps: { data } }) {
-  const navInHero = data?.header?.inHero;
+  const fullHeightHero = data?.header?.inHero;
 
   return (
     <>
-      {navInHero ? (
+      {fullHeightHero ? (
         <HeaderContext.Provider value={data.header}>
           <Component {...data.component} />
         </HeaderContext.Provider>
       ) : (
         <>
-          {!navInHero && <Header {...data.header} />}
+          {!fullHeightHero && <Header {...data.header} />}
           <Component {...data.component} />
         </>
       )}
