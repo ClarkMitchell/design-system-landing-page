@@ -1,22 +1,25 @@
 /* eslint-disable @next/next/no-img-element */
 import gql from "graphql-tag";
 import Image from "next/image";
-import { useContext } from 'react';
+import { useContext } from "react";
 import HeaderContext from "components/Header/HeaderContext";
 import Header from "components/Header";
 
 export default function Hero({ headline, image }) {
-  const headerProps = useContext(HeaderContext)
+  const headerProps = useContext(HeaderContext);
+  const fullHeightHero = !!headerProps;
+  const imageProps = fullHeightHero
+    ? { layout: "fill", objectFit: "cover" }
+    : {
+        layout: "responsive",
+        height: image.asset.metadata.dimensions.height,
+        width: image.asset.metadata.dimensions.width,
+      };
 
   return (
-    <section className="cover">
-      <Header {...headerProps}></Header>
-      <Image
-        src={image.asset.url}
-        alt={image.altText}
-        layout="fill"
-        objectFit="cover"
-      />
+    <section className={fullHeightHero ? "cover" : ""}>
+      {fullHeightHero && <Header {...headerProps} inverted />}
+      <Image {...imageProps} src={image.asset.url} alt={image.altText} />
       <h1>{headline}</h1>
       <div className="center">
         <Image
@@ -39,6 +42,12 @@ Hero.fragment = gql`
       altText
       asset {
         url
+        metadata {
+          dimensions {
+            width
+            height
+          }
+        }
       }
     }
   }

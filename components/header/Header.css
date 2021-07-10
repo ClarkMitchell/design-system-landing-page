@@ -3,5 +3,13 @@ header.cluster {
   padding: var(--s1);
   width: 100%;
   z-index: 2;
+  background-color: var(--white);
+}
+
+header.inverted {
   background-color: var(--sky);
+}
+
+header * {
+  color: var(--dark-blue);
 }

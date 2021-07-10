@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function ImageCard({ name, image }) {
   return (

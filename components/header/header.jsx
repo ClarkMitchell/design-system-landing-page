@@ -4,10 +4,10 @@ import Image from "next/image";
 import React from "react";
 import Nav from "../Nav";
 
-export default function Header({ logo, nav = []}) {
+export default function Header({ logo, nav = [], inverted = false }) {
   return (
-    <header className="cluster">
-      {logo?.asset?.url &&
+    <header className={`cluster${inverted ? " inverted" : ""}`}>
+      {logo?.asset?.url && (
         <a className="logo" href="#">
           <Image
             src={logo.asset.url}
@@ -16,7 +16,7 @@ export default function Header({ logo, nav = []}) {
             width="170"
           />
         </a>
-      }
+      )}
       <Nav nav={nav} />
       <MobileNav>
         <Nav nav={nav} />
