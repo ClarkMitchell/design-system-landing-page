@@ -1,0 +1,3 @@
+article.text-card {
+  max-width: min(35vw, 500px);
+}

@@ -2,19 +2,33 @@
   font-size: 18px;
 }
 
-@import 'fonts.css';
-@import 'colors.css';
-@import 'scale.css';
-@import 'reset.css';
-@import 'box.css';
-@import 'stack.css';
-@import 'center.css';
-@import 'cluster.css';
-@import 'sidebar.css';
-@import 'cover.css';
-@import 'grid.css';
-@import 'icon.css';
-@import 'frame.css';
-@import 'reel.css';
-@import 'imposter.css';
-@import 'components.css';
+@import "fonts.css";
+@import "colors.css";
+@import "scale.css";
+@import "reset.css";
+@import "box.css";
+@import "stack.css";
+@import "center.css";
+@import "cluster.css";
+@import "sidebar.css";
+@import "cover.css";
+@import "grid.css";
+@import "icon.css";
+@import "frame.css";
+@import "reel.css";
+@import "imposter.css";
+@import "components.css";
+
+p {
+  color: var(--dark-gray);
+}
+
+@media screen and (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .Egg {
+    grid-row: 1;
+  }
+}
