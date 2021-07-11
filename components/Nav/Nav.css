@@ -19,7 +19,7 @@ nav > a:not(:last-child):hover {
   border-bottom: 2px solid var(--white);
 }
 
-nav > a:last-child {
+header nav > a:last-child {
   background-color: var(--white);
   padding: var(--s0) var(--s1);
   border-radius: 100px;
@@ -29,6 +29,6 @@ nav > a:last-child {
   font-size: 0.8rem;
 }
 
-nav > a:last-child:hover {
+header nav > a:last-child:hover {
   background-color: var(--light-sky);
 }

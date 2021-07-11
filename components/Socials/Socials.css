@@ -1,0 +1,12 @@
+section.cluster {
+  --column-gap: var(--s1);
+  margin-top: var(--s4);
+}
+
+.social {
+  fill: var(--dark-green);
+}
+
+a:hover .social {
+  fill: var(--white);
+}

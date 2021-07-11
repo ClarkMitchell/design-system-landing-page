@@ -13,3 +13,7 @@ header.inverted {
 header * {
   color: var(--dark-blue);
 }
+
+header .logo-link {
+  margin-right: var(--s2);
+}

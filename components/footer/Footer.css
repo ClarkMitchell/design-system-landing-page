@@ -1,0 +1,25 @@
+footer {
+  background-color: var(--light-green);
+  padding-top: var(--s4);
+  padding-bottom: var(--s4);
+}
+
+.logo-link {
+  margin-bottom: var(--s2);
+}
+
+.logo,
+.logo-path {
+  fill: var(--dark-green);
+}
+
+footer.stack nav a {
+  color: var(--dark-green);
+  border-bottom: none;
+  background-color: transparent;
+}
+
+footer.stack nav a:hover {
+  color: var(--white);
+  border-bottom: none;
+}

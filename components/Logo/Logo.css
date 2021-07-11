@@ -1,0 +1,7 @@
+.logo-image {
+  fill: var(--white);
+}
+
+.dark {
+  fill: var(--dark-green);
+}

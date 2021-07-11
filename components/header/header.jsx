@@ -1,22 +1,19 @@
 import { gql } from "@apollo/client";
+import Logo from "components/Logo";
 import MobileNav from "components/MobileNav";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import Nav from "../Nav";
 
-export default function Header({ logo, nav = [], inverted = false }) {
+export default function Header({ nav = [], inverted = false }) {
   return (
     <header className={`cluster${inverted ? " inverted" : ""}`}>
-      {logo?.asset?.url && (
-        <a className="logo" href="#">
-          <Image
-            src={logo.asset.url}
-            alt={logo.altText}
-            height="30"
-            width="170"
-          />
+      <Link href="#">
+        <a className="logo-link">
+          <Logo height="30" width="170" />
         </a>
-      )}
+      </Link>
       <Nav nav={nav} />
       <MobileNav>
         <Nav nav={nav} />
@@ -29,12 +26,6 @@ Header.query = gql`
   query Header {
     allNavigation(where: { name: { eq: "Header" } }) {
       ... on Navigation {
-        logo {
-          altText
-          asset {
-            url
-          }
-        }
         inHero
         nav {
           text
