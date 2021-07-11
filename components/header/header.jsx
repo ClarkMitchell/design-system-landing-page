@@ -10,7 +10,7 @@ export default function Header({ nav = [], inverted = false }) {
   return (
     <header className={`cluster${inverted ? " inverted" : ""}`}>
       <Link href="#">
-        <a className="logo-link">
+        <a className="logo-link" aria-label="Sunnyside logo">
           <Logo height="30" width="170" />
         </a>
       </Link>

@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import gql from "graphql-tag";
 import Image from "next/image";
+import Script from "next/script";
 import { useContext } from "react";
 import HeaderContext from "components/Header/HeaderContext";
 import Header from "components/Header";
@@ -17,20 +18,25 @@ export default function Hero({ headline, image }) {
       };
 
   return (
-    <section className={fullHeightHero ? "cover" : ""}>
-      {fullHeightHero && <Header {...headerProps} inverted />}
-      <Image {...imageProps} src={image.asset.url} alt={image.altText} />
-      <h1>{headline}</h1>
-      <div className="center">
-        <Image
-          src="/images/icon-arrow-down.svg"
-          width="30"
-          height="108"
-          layout="fixed"
-          alt="down arrow"
-        />
-      </div>
-    </section>
+    <>
+      {fullHeightHero && (
+        <Script src="/scripts/resize.js" strategy="beforeInteractive" />
+      )}
+      <section className={fullHeightHero ? "cover" : ""}>
+        {fullHeightHero && <Header {...headerProps} inverted />}
+        <Image {...imageProps} src={image.asset.url} alt={image.altText} />
+        <h1>{headline}</h1>
+        <div className="center">
+          <Image
+            src="/images/icon-arrow-down.svg"
+            width="30"
+            height="108"
+            layout="fixed"
+            alt="down arrow"
+          />
+        </div>
+      </section>
+    </>
   );
 }
 

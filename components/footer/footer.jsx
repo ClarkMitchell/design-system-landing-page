@@ -9,7 +9,7 @@ export default function Footer({ logo, nav }) {
     <footer className="stack">
       <section className="center">
         <Link href="#">
-          <a className="logo-link">
+          <a className="logo-link" aria-label="Sunnyside logo">
             <Logo height="30" width="170" dark />
           </a>
         </Link>

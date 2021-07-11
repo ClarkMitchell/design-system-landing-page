@@ -4,7 +4,7 @@ footer {
   padding-bottom: var(--s4);
 }
 
-.logo-link {
+footer .logo-link {
   margin-bottom: var(--s2);
 }
 

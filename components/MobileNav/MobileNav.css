@@ -14,7 +14,7 @@
     display: inline;
   }
 
-  :not(.mobile-nav) > nav {
+  header > nav.cluster {
     display: none;
   }
 
