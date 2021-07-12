@@ -1,0 +1,51 @@
+.testimonials {
+  padding: var(--s4) var(--s2);
+  min-height: 50vh;
+}
+
+.testimonials h2 {
+  text-align: center;
+  color: var(--gray);
+  font-size: var(--s1);
+  text-transform: uppercase;
+  letter-spacing: var(--s-3);
+  margin-bottom: var(--s4);
+}
+
+.testimonial img {
+  border-radius: 100px;
+  width: var(--s4);
+  margin-bottom: var(--s3);
+}
+
+.testimonial > div > * {
+  text-align: center;
+}
+
+.quote {
+  margin-bottom: var(--s3);
+}
+
+.position {
+  color: var(--light-gray);
+  font-size: 0.8rem;
+}
+
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  margin-bottom: var(--s4);
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  color: var(--dark-blue);
+  font-size: var(--s0);
+}

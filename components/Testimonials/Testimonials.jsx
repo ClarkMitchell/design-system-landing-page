@@ -3,13 +3,13 @@ import Testimonial from "./Testimonial";
 
 export default function Testimonials({ heading, testimonials }) {
   return (
-    <section>
+    <section className="testimonials">
       <h2>{heading}</h2>
-      <ul>
+      <div className="switcher">
         {testimonials.map((testimonial) => (
           <Testimonial key={testimonial._key} {...testimonial} />
         ))}
-      </ul>
+      </div>
     </section>
   );
 }

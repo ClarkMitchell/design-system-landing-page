@@ -3,14 +3,16 @@ import { gql } from "@apollo/client";
 
 export default function Testimonial({ name, position, quote, image }) {
   return (
-    <li>
-      <section>
+    <article className="testimonial">
+      <div className="top">
         <img src={image.asset.url} alt={image.altText} />
-        <h3>{name}</h3>
-        <h4>{position}</h4>
-        <p>{quote}</p>
-      </section>
-    </li>
+        <p className="quote">{quote}</p>
+      </div>
+      <div className="bottom">
+        <h3 className="name">{name}</h3>
+        <h4 className="position">{position}</h4>
+      </div>
+    </article>
   );
 }
 

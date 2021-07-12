@@ -1,6 +1,6 @@
 .switcher {
   --gap: var(--s1, 1rem);
-  --threshold: var(--measure, 30rem);
+  --threshold: var(--measure, 700px);
   display: flex;
   flex-wrap: wrap;
   gap: var(--gap);
@@ -11,7 +11,7 @@
   flex-basis: calc((var(--threshold) - 100%) * 999);
 }
 
-.switcher > :nth-last-child(n+5),
-.switcher > :nth-last-child(n+5) ~ * {
+.switcher > :nth-last-child(n + 5),
+.switcher > :nth-last-child(n + 5) ~ * {
   flex-basis: 100%;
 }
